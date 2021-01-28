@@ -1,0 +1,110 @@
+{% load i18n %}
+{% if iso_formats %}
+
+<div class="container text-center iso-categories krihs-iso-categories">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>{% trans "Discover the available datasets." %}</h2>
+        </div>
+    </div>
+    <!--div class="row">
+        <div class="col-xs-12">
+            <div class="krihs-flex-container">
+                {% for iso_format in iso_formats %}
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in={{ iso_format.category__identifier }}">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans iso_format.category__description %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <span class="badge badge-secondary">{{ iso_format.count }}</span>
+                                <i class="fa {{ iso_format.category__fa_class }} fa-4x"></i>
+                            </div>
+                            <h4>{% trans iso_format.category__gn_description %}</h4>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="krihs-flex-container">
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in=boundaries">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans "legal land descriptions. Examples: political and administrative boundaries" %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <i class="fa fa-ellipsis-h fa-4x"></i>
+                            </div>
+                            <h4>{% trans "Boundaries" %}</h4>
+                        </div>
+                    </a>
+                </div>
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in=risk">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans "Risk category" %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <i class="fa fa-bullseye fa-4x"></i>
+                            </div>
+                            <h4>{% trans "Risk" %}</h4>
+                        </div>
+                    </a>
+                </div>
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in=presence">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans "Presence category" %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <i class="fa fa-eye fa-4x"></i>
+                            </div>
+                            <h4>{% trans "Presence" %}</h4>
+                        </div>
+                    </a>
+                </div>
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in=others">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans "Others category" %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <i class="fa fa-comments fa-4x"></i>
+                            </div>
+                            <h4>{% trans "Others" %}</h4>
+                        </div>
+                    </a>
+                </div>
+                <div style="padding:16px;width:20%;min-width:180px">
+                    <a href="{% url "search" %}?limit=100&offset=0&category__identifier__in=operation">
+                        <div
+                            class="category"
+                            data-toggle="tooltip"
+                            data-placement="auto"
+                            title="{% trans "Operation category" %}">
+                            <div class="krihs-iso-categories-icon-container">
+                                <i class="fa fa-truck fa-4x"></i>
+                            </div>
+                            <h4>{% trans "Operation" %}</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,47 @@
+{% extends "geonode_base.html" %}
+
+{% load i18n %}
+{% block title %} {% trans "About" %} — {{ block.super }} {% endblock %}
+
+{% block body_outer %}
+<div class="page-header">
+  <h2>{% trans "About" %}</h2>
+</div>
+<h4 class="text-primary">{% trans "UN GeoPortal" %}</h4>
+<p>
+    <ul>
+        <li>
+            {% trans '<strong>UN GeoPortal</strong> is a GIS content management solution to store and share geospatial services and applications such United Nations and Public maps, United Nations Operational maps, Field Global Data Services, Mission Common Operation Picture (MCOP) applications etc., in support of Field Mission mandates, Agencies, Funds and Programs and United Nations Headquarters.' %}​
+        </li>
+        <li>
+            {% trans '<strong>UN GeoPortal</strong> is hosted in <a href="https://www.unlb.org/" target="_blank" rel="noopener noreferrer">UNGSC</a> and managed by <a href="https://www.unlb.org/" target="_blank" rel="noopener noreferrer">SGITT</a>, CSDS. The Client Solutions Delivery Section (CSDS) provides and supports corporate field technology solutions for geospatial, information and innovative technologies to UN field missions and the Secretariat (UNHQ).​' %}​
+        </li>
+        <li>
+            {% trans '<strong>UN GeoPortal</strong> is based on the Hybrid GIS Infrastructure developed by the <a href="http://unopengis.org/" target="_blank" rel="noopener noreferrer">UN Open GIS Initiative</a> using both Open-Source and proprietary GIS technologies.​' %}​
+        </li>
+    </ul>
+</p>
+<h4 class="text-primary">{% trans "UN Open GIS Initiative​" %}</h4>
+<p>
+    <ul>
+        <li>
+            {% trans 'UN Open GIS Initiative, established in 2016, aims to identify and develop an Open Source geospatial bundle that meets the requirements of United Nations mandates and operations, taking full advantage of the expertise of partners: Member States, International Organizations, Academia, Non-Governmental Organizations and the Private sector.​' %}​
+        </li>
+        <li>
+            {% trans 'It provides a unique opportunity to address mainstream Open geospatial technology and data requirements for the United Nations, International Organizations, NGOs and Humanitarian Community and for Member States in particular for developing countries.​' %}​
+        </li>
+        <li>
+            {% trans 'Current developments are focused in developing a Hybrid GIS architecture and infrastructure to integrate open source and proprietary geospatial platforms to support effectively and efficiently United Nations operations.​' %}​
+        </li>
+        <li>
+            {% trans 'The Working Group 1 (WG-1) of UN Open GIS Initiative aims to provide a full scale of Hybrid GIS Solutions for UN Secretariat, including UN field missions and regional commissions, and then expand to UN agencies, UN operating partners, and developing countries. Hybrid approach will effectively support UN operations through integrating Geo-Databases and complementing systems to support various UN requirements.​' %}​
+        </li>
+        <li>
+            {% trans 'WG-1 has initiated Pilot Project in 2020 for proof of concept through design and implementation of hybrid GIS prototype to support Unite Map & Open GeoPortal. Main contributors are Korea Research Institute for Human Settlements (KRIHS), World Food Programme (WFP), UN Global Service Centre (UNGSC), UN Geospatial Information Section (UNGIS) and GeoSolutions.​' %}​
+        </li>
+        <li>
+            {% trans 'Further information available on the <a href="http://unopengis.org/" target="_blank" rel="noopener noreferrer">UN Open GIS Initiative website</a>.' %}​
+        </li>
+    </ul>
+</p>
+{% endblock %}
