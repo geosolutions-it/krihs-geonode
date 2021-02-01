@@ -57,15 +57,13 @@ WSGI_APPLICATION = "{}.wsgi.application".format(PROJECT_NAME)
 LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', "en")
 
 if PROJECT_NAME not in INSTALLED_APPS:
-    INSTALLED_APPS = (PROJECT_NAME,) + INSTALLED_APPS
+    INSTALLED_APPS += (PROJECT_NAME,)
 
 # Location of url mappings
 ROOT_URLCONF = os.getenv('ROOT_URLCONF', '{}.urls'.format(PROJECT_NAME))
 
 # Additional directories which hold static files
-STATICFILES_DIRS.append(
-    os.path.join(LOCAL_ROOT, "static"),
-)
+STATICFILES_DIRS = [os.path.join(LOCAL_ROOT, "static"), ] + STATICFILES_DIRS
 
 # Location of locale files
 LOCALE_PATHS = (
