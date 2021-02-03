@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
 {% block extra_head %}
       <link href="{{ STATIC_URL }}css/site_base.css" rel="stylesheet"/>
 {% endblock %}
@@ -10,3 +12,47 @@ Add Tab for Third Party Apps
 </li>
 {% endcomment %}
 {% endblock %}
+{% block footer %}
+<footer class="krihs-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 krihs-footer-left">
+        <div>
+          <label class="hidden">{% trans "Language" %}</label>
+          {% if csrf_token != "NOTPROVIDED" %}
+          {% get_current_language as LANGUAGE %}
+          <form class="form-inline" action="/i18n/setlang/" method="post">
+          {% csrf_token %}
+            <select name="language" onchange="javascript:form.submit()">
+              {% for lang in LANGUAGES %}
+              <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %}>
+                {{ lang.1 }}
+              </option>
+              {% endfor %}
+            </select>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-12 krihs-footer-right">
+        <div>
+          <ul class="list-unstyled">
+            <li>{% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a>{% if user.is_staff %} <em>{% trans "version" %} {{ VERSION }}</em>{% endif %}</li>
+            <li><a href="{% url "about" %}">{% trans "About" %}</a><li>
+          </ul>
+          <div>
+            <img src="{% static 'img/logo-w.png' %}"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div>
+          <small>2021 © United Nations Geospatial</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

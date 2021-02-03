@@ -4,15 +4,16 @@
   "author": "GeoNode Developers",
   "description": "Static code and assets for krihs_geonode",
   "contributors": [
-    {
-    }
+    {}
   ],
   "scripts": {
-    "test": "jshint **.js"
+    "test": "jshint **.js",
+    "compile-css": "lessc -x less/base.less geonode/css/base.css"
   },
   "license": "BSD",
   "private": "false",
   "dependencies": {
+    "less": "^4.1.0"
   },
   "devDependencies": {
     "del": "*",
