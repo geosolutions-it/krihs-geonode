@@ -48,6 +48,7 @@ RUN apt-get update && apt-get install -y devscripts build-essential debhelper pk
 
 # Install pip packages
 RUN pip install pip --upgrade
+RUN pip install Django==2.2.16
 RUN pip install --upgrade --no-cache-dir --src /usr/src -r requirements.txt \
     && pip install pygdal==$(gdal-config --version).* \
     && pip install flower==0.9.4
